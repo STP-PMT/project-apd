@@ -73,6 +73,8 @@ namespace WebService.Controllers
         // DELETE: api/Customer/5
         public void Delete(int id)
         {
+            context.Customers.Remove(context.Customers.FirstOrDefault(c => c.id == id));
+            context.SaveChanges();
         }
     }
 }
